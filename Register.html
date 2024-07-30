@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: tahoma;
+        }
+
+        .myNav {
+            background-color: #ff9900;
+            width: 100%;
+            overflow: auto;
+        }
+
+        .myNav a {
+            width: 14%;
+            float: left;
+            text-decoration: none;
+            color: white;
+            padding: 14px 5px;
+            font-size: 15pt;
+            text-align: center;
+        }
+
+        .myNav a:hover {
+            background-color: #F60;
+        }
+
+        .input {
+            width: 500px;
+            height: 25px;
+        }
+
+        .button {
+            height: 25px;
+            width: 80px;
+        }
+
+        .button:hover {
+            background-color: #337ab7;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+    <script>
+        function check() {
+            var Fname = document.getElementById("Fname").value;
+            var sFname = /^[A-Za-z]+$/;
+            if(!sFname.test(Fname)){
+                alert("The First name cannot left blank!")
+                document.getElementById("Fname").focus();
+                return false;
+            }
+            var Lname = document.getElementById("Lname").value;
+            var sLname = /^[A-Za-z]+$/;
+            if(!sLname.test(Lname)){
+                alert("The Last name cannot left blank!")
+                document.getElementById("Lname").focus();
+                return false;
+            }
+            var Email = document.getElementById("email").value;
+            var sEmail = /^\w+[@]\w+[.]\w{3}([.]\w{2})?$/;
+            if(!sEmail.test(Email)){
+                alert("The Email cannot left blank!")
+                document.getElementById("email").focus();
+                return false;
+            }
+            var Phone = document.getElementById("phone").value;
+            var sPhone = /^\d{8,12}$/;
+            if(!sPhone.test(Phone)){
+                alert("The Phone number cannot left blank!")
+                document.getElementById("phone").focus();
+                return false;
+            }           
+                alert("Congratulation Your Informarion has been sent successfully!");
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <h1>Logo</h1>
+        </div>
+        <div class="myNav">
+            <a href="index_v2.0.html">Home</a>
+            <a href="">Untilities</a>
+            <a href="">Share</a>
+            <a href="">Knowledge</a>
+            <a href="Register.html">SignUp</a>
+            <a href="">SignIn</a>
+            <a href="">About us</a>
+        </div>
+    </header>
+    <section style="margin:0px 500px ;">
+        <p style="text-align: center; font-size: 25pt;">Register Form</p>
+        <form action="index_v2.0.html" onsubmit="return check()">
+            Full name: <br>
+            <input type="text" placeholder="Enter full name" class="input" id="Fname"><br><br>
+            Last name: <br>
+            <input type="text" placeholder="Enter last name" class="input" id="Lname"><br><br>
+            Country: <br>
+            <select name="" id="" class="input">
+                <option>Vietnam</option>
+                <option>Laos</option>
+                <option>Combodia</option>
+                <option>Thailand</option>
+            </select><br><br>
+            <input type="radio" checked name="sex">Male <input type="radio" name="sex"> Female <br><br>
+            Email: <br>
+            <input type="email" class="input" placeholder="Enter email" id="email"><br><br>
+            Phone: <br>
+            <input type="text" class="input" placeholder="Enter telephone" id="phone"><br><br>
+            <input type="submit" value="Register" class="button" >&nbsp;<input type="reset" value="Reset" class="button">
+            <br><br>
+        </form>
+    </section>
+    <footer>
+        &copy; By Me. All right reversed
+    </footer>
+</body>
+
+</html>
